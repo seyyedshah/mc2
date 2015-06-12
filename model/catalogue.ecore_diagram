@@ -318,7 +318,7 @@
   <edges xmi:type="notation:Connector" xmi:id="_pwf5oBAaEeWHObxMQd9gTA" type="4004" source="_L-PKwBAaEeWHObxMQd9gTA" target="_xDs28BAZEeWHObxMQd9gTA">
     <styles xmi:type="notation:FontStyle" xmi:id="_pwf5oRAaEeWHObxMQd9gTA" fontName=".Helvetica Neue DeskInterface"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pwf5ohAaEeWHObxMQd9gTA" points="[6, -10, -118, 67]$[6, -28, -118, 49]$[114, -28, -10, 49]$[121, -66, -3, 11]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pwf5ohAaEeWHObxMQd9gTA" points="[3, -10, -112, 57]$[3, -25, -112, 42]$[115, -25, 0, 42]$[115, -66, 0, 1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pwhu0BAaEeWHObxMQd9gTA" id="(0.4861878453038674,0.1643835616438356)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pwhu0RAaEeWHObxMQd9gTA" id="(0.35714285714285715,0.9807692307692307)"/>
   </edges>
