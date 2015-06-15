@@ -74,7 +74,8 @@ The main classes in the metamodel are shown, together with their inheritance hie
 \item DataConcept - An abstract class which allows all its child classes to be treated as concepts.
 \item DataSection - A grouping class for parts of a model, it can contain other DataSections, and DataClasses.
 \item DataClass - A container for DataElements.
-\item ValueDomain - A structure for the value/ representation of the DataElement.
+\item ValueDomain - A structure for the value/ representation of the DataElement composed of Datatypes, MeasurementUnits and Enumerations.
+\item Datatype - A class which specifies a particular datatype as a primitive, such as bool or int.
 \end{itemize}
 
  \begin{figure}[here]
@@ -97,13 +98,19 @@ The \emph{CatalogueCore} class is the \emph{parent} of both the \emph{DataModel}
 
 \subsection{Groupings inside the DataModel}
 
-A \emph{DataAnnotation} class is needed to add annotations to any of the model elements in the model catalogue, and this can include constraints. We considered adding in a spearate constraint entity, however unless we are going to constraint the constraint to a particular language it seems acceptable to adopt the UML practise of including a constraint in an annotation. The annotation will have a type of either text or constraint (not shown yet ) and then it will have the annotation language, which depending on the type will either refer to a spoken language (such as German) or a constraint language (such as OCL).
+A \emph{DataAnnotation} class is needed to add annotations to any of the model elements in the model catalogue, and this includes constraints. We are not developing an expressions aspect to the language, at present it is a structural language and hence we adopt the UML practise of including a constraint in an annotation. The annotation will have a type of either text or constraint (not shown yet ) and then it will have the annotation language, which depending on the type will either refer to a spoken language (such as German) or a constraint language (such as OCL).
 
 \begin{figure}[here]
 \includegraphics[scale=0.4]{images/core2}
 \caption{Core Classes 2} 
 \label{fig:core2}
 \end{figure}
+
+
+Since a DataAnnotation is derived from the CatalogueCore entity we are able to write a DataAnnotation about an existing DataAnnotation. We are also able to add a constraint to a class, or a DataAssociation between two separate classes. If we have a DataClass containing a DataElement represented by a ValueDomain with a Datatype of integer, that value domain may itself be constrained in fact in this language we want to maintain constraints at the level of a valuedomain. In stating that a particular blood pressure is a maximum that may be related to a particular context, which means that the maximum may only be applied when there is an association between two data elements, and that association may not be direct.
+
+
+
 
 The class \emph{DataConcept} is an abstract class which is the parent of \emph{DataSection}, \emph{DataClass},\emph{DataElement}, \emph{ValueDomain}. The main idea behind having a single abstract parent class  \emph{DataConcept}  is to capture the notion that \emph{concepts} may be represented by any one of these classes within a model.  
 
