@@ -157,17 +157,19 @@ ISO/JTC 1/SC 32N2224
 
 \subsection{Metadata Registry Summary}
 
-It is clear from the previous section that the ISO standard itself has not followed it's own guidelines, it is not clear, it is ambiguous, and it does not stand on its own (it needs at least two further technical reports to ensure metadata compliance). Whilst it does refer to some aspects of work carried out in other areas, the latest version of the standard does allow for semantic web reasoning for instance, it is missing in two fundamental regards.
+It is clear from the previous section that the ISO standard itself has not followed it's own guidelines, it is not clear, it is ambiguous, and it does not stand on its own (for instance it needs at least two further technical reports to ensure metadata compliance). 
 
-Firstly the metadata registry is an attempt to link the very many ways in which data can be represented in a \emph{"machine form"} with the very many ways in which \emph{concepts} are represented.  These are arguably orthogonal domains, and so any linking between them must be carried out in a fashion that is consistent with the original intention behind the data systems being represented. If we are going to use data elements which are components of other entities in a software system, then we need to have some representation of those other entities, and that representation needs to be clearly defined. This brings on my second point which is that the ISO11179 specification is unable to capture \emph{context} despite that fact that the specification makes many references to the need to do so.
+The metadata registry is an attempt to marry concepts with metadata, using a flexible adaptable model which can be used for a variety of different use cases. In particular it is intended to capture the meaning of different datasets using metadata, some of structural, some of it relational and some built into the typing of value domains and datatypes.  Currently the standard is lacking in having a way to capture structure and context easily, it measures data elements only in terms of themselves, not in terms of their relationships to other data elements, and it is not really clear whether a metadata registry should have a separate entity called a data element.
 
-In order to make a \emph{metadata registry} system work we need to address these two points, and we do so by:
+We propose two changes to the ISO11179 model in order to solve these problems, firstly we need to introduce the \emph{context} of model driven engineering and allow data elements to be placed within structures that are currently used for grouping data elements in most current information systems. We need to link these structures to the current UML/EMF models available in the Software Engineering world. We need to remove the convoluted systems of conceptual domains and value meanings, and introduce a simpler clearer means of representing the \emph{type} systems which are part of the \emph{Value} aspects of the metamodel. Lastly, we need to devise a framework which will link these structures to the reasoning systems available in the semantic web world.
+
+In the next section we introduce a new design for a metadata registry which we are calling a \emph{Model Catalogue} by:
 \begin{itemize}
 	\item Introducing Models as a containment for data elements using tried and tested software engineering techniques.
-	\item We re-define the \emph{Metamodel} on which the metadata registry is based to one which is clear, unambiguous and concise.
+	\itemFormally specifying the \emph{Metamodel} on which the \emph{Model Catalogue} is based.
 \end{itemize}
 
-We are also re-naming the toolkit from a metadata registry to a emph{Models Catalogue}, the next sections detail the new unambiguous metamodel.
+ 
 
  
 
