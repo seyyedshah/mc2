@@ -44,7 +44,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Sm60lQ-OEeWHObxMQd9gTA"/>
     </children>
     <element xmi:type="ecore:EClass" href="catalogue.ecore#//DataAnnotation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sm6NgQ-OEeWHObxMQd9gTA" x="9" y="54" width="156" height="102"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sm6NgQ-OEeWHObxMQd9gTA" x="18" y="81" width="156" height="102"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_8pISIA-OEeWHObxMQd9gTA" type="2001" fontName=".Helvetica Neue DeskInterface">
     <children xmi:type="notation:DecorationNode" xmi:id="_8pISIg-OEeWHObxMQd9gTA" type="5001"/>

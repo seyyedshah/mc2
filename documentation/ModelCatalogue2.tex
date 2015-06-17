@@ -67,7 +67,9 @@
 
 \section{Metadata Registry Standards}
 
-In the past Data Dictionaries were used to store details of database record structure or application data structure on a local per application or database basis; a metadata registry provides a similar capability but on a system or organisation-wide basis. It can also provides features that are commonly included in a \emph{thesaurus}, a \emph{Taxonomy}, and an \emph{Ontology} . These features include the ability to classify terms in relation to one another, record relationships such as synonyms, and classify hierarchical relationships. The first large-scale adoption of metadata registries appears to be by the US caBIG initiative~\cite{kunz09} and following on from that there was the  and the caCORE software development kit~\cite{koma08}. Our interest in using Metadata Registry toolkits stems from the work carried out in the CancerGrid project~\cite{davi14}, where an ISO1179-compliant metadata registry was developed for curation of semantic meta data and model-driven generation of trial-specific software~\cite{davi12, Abler2011}. However tests of the XML-based metadata registry indicated that this work require a more scalable solution.
+In the past Data Dictionaries were used to store details of database record structure or application data structure on a local per application or database basis; a metadata registry provides a similar capability but on a system or organisation-wide basis. It can also provides features that are commonly included in a \emph{thesaurus}, a \emph{Taxonomy}, and an \emph{Ontology} . These features include the ability to classify terms in relation to one another, record relationships such as synonyms, and classify hierarchical relationships. The first large-scale adoption of metadata registries appears to be by the US caBIG initiative~\cite{kunz09} and following on from that there was the caCORE software development kit~\cite{koma08}. 
+
+Our interest in using Metadata Registry toolkits stems from the work carried out in the CancerGrid project~\cite{davi14}, where an ISO1179-compliant metadata registry was developed for curation of semantic meta data and model-driven generation of trial-specific software~\cite{davi12, Abler2011}. However tests of the XML-based metadata registry indicated that performance decreased rapidly once the registry stored over about 20,000 data elements which limited many of the tests and indicated the need for a more scalable solution. 
 
 
 
@@ -163,7 +165,7 @@ The metadata registry is an attempt to marry concepts with metadata, using a fle
 
 We propose two changes to the ISO11179 model in order to solve these problems, firstly we need to introduce the \emph{context} of model driven engineering and allow data elements to be placed within structures that are currently used for grouping data elements in most current information systems. We need to link these structures to the current UML/EMF models available in the Software Engineering world. We need to remove the convoluted systems of conceptual domains and value meanings, and introduce a simpler clearer means of representing the \emph{type} systems which are part of the \emph{Value} aspects of the metamodel. Lastly, we need to devise a framework which will link these structures to the reasoning systems available in the semantic web world.
 
-In the next section we introduce a new design for a metadata registry which we are calling a \emph{Model Catalogue} by:
+In the next few sections we introduce a new design for a metadata registry which we are calling a \emph{Model Catalogue} by:
 \begin{itemize}
 	\item Introducing Models as a containment for data elements using tried and tested software engineering techniques.
 	\itemFormally specifying the \emph{Metamodel} on which the \emph{Model Catalogue} is based.
@@ -171,7 +173,27 @@ In the next section we introduce a new design for a metadata registry which we a
 
  
 
+\section{Requirements}
+
+The driving use cases for the Model Catalogue can be listed as follows:
+\begin{itemize}
+\item To store create and manage datasets centrally.
+\item To generate software artefacts from maintained datasets.
+\item To provide a means of linking and relating different software models.
+\end{itemize}
+
+\subsection{Dataset Management}
+
+A central repository for datasets is required, so that datasets can be viewed, managed and administered from a central point, with different users accessing different levels of functionality according to their roles. 
+
+\subsection{Artefact Generation}
+
+\subsection{Linking and Relating Software Models}
+
+
+
  
+
 
 
 
