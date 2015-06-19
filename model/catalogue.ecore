@@ -1,49 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore">
-  <eClassifiers xsi:type="ecore:EClass" name="CatalogueCore">
-    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//DataAssociation"/>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mc2" nsURI="http://mc2" nsPrefix="mc2">
+  <eClassifiers xsi:type="ecore:EClass" name="CatalogueCore" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" upperBound="-1" eType="#//DataAssociation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="notesThat" upperBound="-1"
         eType="#//DataAnnotation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataAnnotation" eSuperTypes="#//CatalogueCore">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnnotationType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnnotationText"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnnotationLanguage"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="languageURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataAssociation" eSuperTypes="#//CatalogueCore">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Role1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Role2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataAssociation" eSuperTypes="#//DataConcept">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inRoleName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outRoleName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//CatalogueCore"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="out" lowerBound="1" eType="#//CatalogueCore"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataModel" eSuperTypes="#//CatalogueCore">
     <eStructuralFeatures xsi:type="ecore:EReference" name="owns" lowerBound="1" upperBound="-1"
         eType="#//DataConcept" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="import" eType="#//DataConcept"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//DataConcept"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataConcept" eSuperTypes="#//CatalogueCore">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="clones" eType="#//DataConcept"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataConcept" abstract="true" eSuperTypes="#//CatalogueCore">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clones" upperBound="-1"
+        eType="#//DataConcept"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataSection" eSuperTypes="#//DataConcept"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataClass" eSuperTypes="#//DataConcept"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataElement" eSuperTypes="#//DataConcept"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSection" eSuperTypes="#//DataConcept">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//DataClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataClass" eSuperTypes="#//DataConcept">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifies" upperBound="-1"
+        eType="#//DataElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataElement" eSuperTypes="#//DataConcept">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" lowerBound="1" eType="#//ValueDomain"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ValueDomain" eSuperTypes="#//DataConcept">
-    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Enumeration" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Datatype" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//MeasurementUnit" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conceptualDomain" upperBound="-1"
+        eType="#//DataConcept"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Datatype" eSuperTypes="#//DataConcept">
-    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Enums"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" eSuperTypes="#//ValueDomain"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MeasurementUnit" eSuperTypes="#//ValueDomain"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Enumeration" eSuperTypes="#//ValueDomain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" lowerBound="1" upperBound="-1"
+        eType="#//EnumLiteral" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MeasurementUnit" eSuperTypes="#//DataConcept"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Enumeration" eSuperTypes="#//DataConcept">
-    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" upperBound="-1"
-        eType="#//Enums" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Enums">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumLiteral">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumLiteralType" lowerBound="1"
+        eType="#//PrimitiveType"/>
   </eClassifiers>
 </ecore:EPackage>
