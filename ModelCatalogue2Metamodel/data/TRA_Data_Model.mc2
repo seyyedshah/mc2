@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mc2:DataModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mc2="http://mc2" name="TRA_Data_Model">
+  <owns xsi:type="mc2:DataClass" name="Recipient"/>
+  <owns xsi:type="mc2:DataAssociation" name="recipient_to_transplant_details" to="//@owns.9" multiplicity="*" from="//@owns.0"/>
+  <owns xsi:type="mc2:DataAssociation" name="recipient_to_donor"  to="//@owns.35" multiplicity="1" from="//@owns.0"/>
+  <owns xsi:type="mc2:DataAssociation" name="recipient_to_serology" to="//@owns.8" multiplicity="*" from="//@owns.0"/>
+  <owns xsi:type="mc2:DataAssociation" name="recipient_to_medical_history" to="//@owns.43" multiplicity="1" from="//@owns.0"/>
+  <owns xsi:type="mc2:DataAssociation" name="recipient_to_demographics" to="//@owns.42" from="//@owns.0"/>
+  <owns xsi:type="mc2:DataAssociation" name="recipient_to_induction" to="//@owns.54" from="//@owns.0"/>
+  <owns xsi:type="mc2:DataAssociation" name="recipient_to_hla" to="//@owns.53" from="//@owns.0"/>
+  <owns xsi:type="mc2:DataClass" name="Serology"/>
+  <owns xsi:type="mc2:DataClass" name="Transplant_Details" classifies="//@owns.27 //@owns.26 //@owns.25 //@owns.33 //@owns.30 //@owns.31 //@owns.10 //@owns.24 //@owns.28 //@owns.18 //@owns.19 //@owns.32 //@owns.20 //@owns.21 //@owns.22 //@owns.23 //@owns.29 //@owns.13 //@owns.12 //@owns.16 //@owns.17 //@owns.11 //@owns.14 //@owns.15"/>
+  <owns xsi:type="mc2:DataElement" name="date_of_transplant"/>
+  <owns xsi:type="mc2:DataElement" name="transplant_centre"/>
+  <owns xsi:type="mc2:DataElement" name="recipient_hospital_number_at_transplant_centre"/>
+  <owns xsi:type="mc2:DataElement" name="recipient_hospital_number_at_followup_unit"/>
+  <owns xsi:type="mc2:DataElement" name="type_of_transplant"/>
+  <owns xsi:type="mc2:DataElement" name="type_of_transplant_translated"/>
+  <owns xsi:type="mc2:DataElement" name="relationship_between_recipient_and_donor"/>
+  <owns xsi:type="mc2:DataElement" name="relationship_between_recipient_and_donor_translated"/>
+  <owns xsi:type="mc2:DataElement" name="laterality"/>
+  <owns xsi:type="mc2:DataElement" name="laterality_translated"/>
+  <owns xsi:type="mc2:DataElement" name="local_imported"/>
+  <owns xsi:type="mc2:DataElement" name="local_imported_translated"/>
+  <owns xsi:type="mc2:DataElement" name="preimplantation_biopsy_k_score"/>
+  <owns xsi:type="mc2:DataElement" name="preimplantation_biopsy_k_score_second_kidney"/>
+  <owns xsi:type="mc2:DataElement" name="failure_date"/>
+  <owns xsi:type="mc2:DataElement" name="aboi"/>
+  <owns xsi:type="mc2:DataElement" name="abo_antibody_titre"/>
+  <owns xsi:type="mc2:DataElement" name="abo_antibody_date"/>
+  <owns xsi:type="mc2:DataElement" name="hlai"/>
+  <owns xsi:type="mc2:DataElement" name="previous_bone_marrow_transplant_from_same_donor"/>
+  <owns xsi:type="mc2:DataElement" name="cold_ischaemic_time_hours"/>
+  <owns xsi:type="mc2:DataElement" name="cold_ischaemic_time_hours"/>
+  <owns xsi:type="mc2:DataElement" name="living_donor_pseudonym"/>
+  <owns xsi:type="mc2:DataElement" name="cadaveric_donor_pseudonym"/>
+  <owns xsi:type="mc2:DataAssociation" name="transplant_details_to_organs_transplated"  to="//@owns.52" from="//@owns.9"/>
+  <owns xsi:type="mc2:DataClass" name="Donor"/>
+  <owns xsi:type="mc2:DataAssociation" name="donor_to_serology" to="//@owns.8" multiplicity="*" from="//@owns.35"/>
+  <owns xsi:type="mc2:DataClass" name="Cadaveric_Donor" extends="//@owns.35"/>
+  <owns xsi:type="mc2:DataClass" name="Cadaveric_Donor_Demographics"/>
+  <owns xsi:type="mc2:DataAssociation" name="cadaveric_donor_to_cadaveric_donot_demographics" to="//@owns.38" multiplicity="" from="//@owns.37"/>
+  <owns xsi:type="mc2:DataClass" name="Living_Donor" extends="//@owns.35"/>
+  <owns xsi:type="mc2:DataAssociation" name="living_donor_to_demographic" to="//@owns.42" multiplicity="" from="//@owns.40"/>
+  <owns xsi:type="mc2:DataClass" name="Demographics"/>
+  <owns xsi:type="mc2:DataClass" name="Medical_History"/>
+  <owns xsi:type="mc2:DataAssociation" name="medical_history_to_dialysis_modality" to="//@owns.49" multiplicity="1" from="//@owns.43"/>
+  <owns xsi:type="mc2:DataAssociation" name="medical_history_to_comorbidity" to="//@owns.51" multiplicity="" from="//@owns.43"/>
+  <owns xsi:type="mc2:DataAssociation" name="medical_history_to_esrd" to="//@owns.50" multiplicity="1" from="//@owns.43"/>
+  <owns xsi:type="mc2:DataAssociation" name="medical_history_to_family_history" to="//@owns.48" multiplicity="*" from="//@owns.43"/>
+  <owns xsi:type="mc2:DataClass" name="Family_History"/>
+  <owns xsi:type="mc2:DataClass" name="Dialysis_Modality"/>
+  <owns xsi:type="mc2:DataClass" name="ESRD"/>
+  <owns xsi:type="mc2:DataClass" name="Comorbidity"/>
+  <owns xsi:type="mc2:DataClass" name="Organs_Transplanted"/>
+  <owns xsi:type="mc2:DataClass" name="HLA"/>
+  <owns xsi:type="mc2:DataClass" name="Induction"/>
+</mc2:DataModel>
