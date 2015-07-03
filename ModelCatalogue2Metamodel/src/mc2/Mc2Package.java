@@ -213,13 +213,22 @@ public interface Mc2Package extends EPackage {
 	int DATA_CONCEPT__CLONES = CATALOGUE_CORE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_CONCEPT__EXTENDS = CATALOGUE_CORE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Data Concept</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_CONCEPT_FEATURE_COUNT = CATALOGUE_CORE_FEATURE_COUNT + 1;
+	int DATA_CONCEPT_FEATURE_COUNT = CATALOGUE_CORE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Data Concept</em>' class.
@@ -268,31 +277,13 @@ public interface Mc2Package extends EPackage {
 	int DATA_ASSOCIATION__CLONES = DATA_CONCEPT__CLONES;
 
 	/**
-	 * The feature id for the '<em><b>In Role Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSOCIATION__IN_ROLE_NAME = DATA_CONCEPT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Out Role Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_ASSOCIATION__OUT_ROLE_NAME = DATA_CONCEPT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Direction</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_ASSOCIATION__DIRECTION = DATA_CONCEPT_FEATURE_COUNT + 2;
+	int DATA_ASSOCIATION__EXTENDS = DATA_CONCEPT__EXTENDS;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -301,7 +292,7 @@ public interface Mc2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSOCIATION__TO = DATA_CONCEPT_FEATURE_COUNT + 3;
+	int DATA_ASSOCIATION__TO = DATA_CONCEPT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
@@ -310,7 +301,7 @@ public interface Mc2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSOCIATION__MULTIPLICITY = DATA_CONCEPT_FEATURE_COUNT + 4;
+	int DATA_ASSOCIATION__MULTIPLICITY = DATA_CONCEPT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -319,7 +310,7 @@ public interface Mc2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSOCIATION__FROM = DATA_CONCEPT_FEATURE_COUNT + 5;
+	int DATA_ASSOCIATION__FROM = DATA_CONCEPT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Data Association</em>' class.
@@ -328,7 +319,7 @@ public interface Mc2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSOCIATION_FEATURE_COUNT = DATA_CONCEPT_FEATURE_COUNT + 6;
+	int DATA_ASSOCIATION_FEATURE_COUNT = DATA_CONCEPT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Data Association</em>' class.
@@ -441,6 +432,15 @@ public interface Mc2Package extends EPackage {
 	int DATA_SECTION__CLONES = DATA_CONCEPT__CLONES;
 
 	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SECTION__EXTENDS = DATA_CONCEPT__EXTENDS;
+
+	/**
 	 * The feature id for the '<em><b>Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -503,6 +503,15 @@ public interface Mc2Package extends EPackage {
 	 * @ordered
 	 */
 	int DATA_CLASS__CLONES = DATA_CONCEPT__CLONES;
+
+	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_CLASS__EXTENDS = DATA_CONCEPT__EXTENDS;
 
 	/**
 	 * The feature id for the '<em><b>Classifies</b></em>' reference list.
@@ -569,6 +578,15 @@ public interface Mc2Package extends EPackage {
 	int TYPE__CLONES = DATA_CONCEPT__CLONES;
 
 	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE__EXTENDS = DATA_CONCEPT__EXTENDS;
+
+	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -622,6 +640,15 @@ public interface Mc2Package extends EPackage {
 	 * @ordered
 	 */
 	int DATA_ELEMENT__CLONES = DATA_CONCEPT__CLONES;
+
+	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ELEMENT__EXTENDS = DATA_CONCEPT__EXTENDS;
 
 	/**
 	 * The feature id for the '<em><b>Has A</b></em>' reference.
@@ -706,6 +733,15 @@ public interface Mc2Package extends EPackage {
 	int VALUE_DOMAIN__CLONES = DATA_CONCEPT__CLONES;
 
 	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_DOMAIN__EXTENDS = DATA_CONCEPT__EXTENDS;
+
+	/**
 	 * The feature id for the '<em><b>Conceptual Domain</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -770,6 +806,15 @@ public interface Mc2Package extends EPackage {
 	int PRIMITIVE_TYPE__CLONES = TYPE__CLONES;
 
 	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_TYPE__EXTENDS = TYPE__EXTENDS;
+
+	/**
 	 * The number of structural features of the '<em>Primitive Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -825,6 +870,15 @@ public interface Mc2Package extends EPackage {
 	int MEASUREMENT_UNIT__CLONES = DATA_CONCEPT__CLONES;
 
 	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASUREMENT_UNIT__EXTENDS = DATA_CONCEPT__EXTENDS;
+
+	/**
 	 * The number of structural features of the '<em>Measurement Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -878,6 +932,15 @@ public interface Mc2Package extends EPackage {
 	 * @ordered
 	 */
 	int ENUMERATION__CLONES = TYPE__CLONES;
+
+	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION__EXTENDS = TYPE__EXTENDS;
 
 	/**
 	 * The feature id for the '<em><b>Has</b></em>' containment reference list.
@@ -1048,39 +1111,6 @@ public interface Mc2Package extends EPackage {
 	EClass getDataAssociation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mc2.DataAssociation#getInRoleName <em>In Role Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>In Role Name</em>'.
-	 * @see mc2.DataAssociation#getInRoleName()
-	 * @see #getDataAssociation()
-	 * @generated
-	 */
-	EAttribute getDataAssociation_InRoleName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link mc2.DataAssociation#getOutRoleName <em>Out Role Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Out Role Name</em>'.
-	 * @see mc2.DataAssociation#getOutRoleName()
-	 * @see #getDataAssociation()
-	 * @generated
-	 */
-	EAttribute getDataAssociation_OutRoleName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link mc2.DataAssociation#getDirection <em>Direction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Direction</em>'.
-	 * @see mc2.DataAssociation#getDirection()
-	 * @see #getDataAssociation()
-	 * @generated
-	 */
-	EAttribute getDataAssociation_Direction();
-
-	/**
 	 * Returns the meta object for the reference '{@link mc2.DataAssociation#getTo <em>To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1165,6 +1195,17 @@ public interface Mc2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getDataConcept_Clones();
+
+	/**
+	 * Returns the meta object for the reference '{@link mc2.DataConcept#getExtends <em>Extends</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Extends</em>'.
+	 * @see mc2.DataConcept#getExtends()
+	 * @see #getDataConcept()
+	 * @generated
+	 */
+	EReference getDataConcept_Extends();
 
 	/**
 	 * Returns the meta object for class '{@link mc2.DataSection <em>Data Section</em>}'.
@@ -1460,30 +1501,6 @@ public interface Mc2Package extends EPackage {
 		EClass DATA_ASSOCIATION = eINSTANCE.getDataAssociation();
 
 		/**
-		 * The meta object literal for the '<em><b>In Role Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_ASSOCIATION__IN_ROLE_NAME = eINSTANCE.getDataAssociation_InRoleName();
-
-		/**
-		 * The meta object literal for the '<em><b>Out Role Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_ASSOCIATION__OUT_ROLE_NAME = eINSTANCE.getDataAssociation_OutRoleName();
-
-		/**
-		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_ASSOCIATION__DIRECTION = eINSTANCE.getDataAssociation_Direction();
-
-		/**
 		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1550,6 +1567,14 @@ public interface Mc2Package extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_CONCEPT__CLONES = eINSTANCE.getDataConcept_Clones();
+
+		/**
+		 * The meta object literal for the '<em><b>Extends</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_CONCEPT__EXTENDS = eINSTANCE.getDataConcept_Extends();
 
 		/**
 		 * The meta object literal for the '{@link mc2.impl.DataSectionImpl <em>Data Section</em>}' class.

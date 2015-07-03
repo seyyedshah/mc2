@@ -12,12 +12,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="languageURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataAssociation" eSuperTypes="#//DataConcept">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inRoleName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outRoleName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//CatalogueCore"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//CatalogueCore"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//DataAssociation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataModel" eSuperTypes="#//CatalogueCore">
     <eStructuralFeatures xsi:type="ecore:EReference" name="owns" lowerBound="1" upperBound="-1"
@@ -28,6 +26,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataConcept" abstract="true" eSuperTypes="#//CatalogueCore">
     <eStructuralFeatures xsi:type="ecore:EReference" name="clones" upperBound="-1"
         eType="#//DataConcept"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//DataConcept"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataSection" eSuperTypes="#//DataConcept">
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"

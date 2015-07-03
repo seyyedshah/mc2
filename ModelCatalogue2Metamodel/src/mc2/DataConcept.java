@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link mc2.DataConcept#getClones <em>Clones</em>}</li>
+ *   <li>{@link mc2.DataConcept#getExtends <em>Extends</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,5 +37,31 @@ public interface DataConcept extends CatalogueCore {
 	 * @generated
 	 */
 	EList<DataConcept> getClones();
+
+	/**
+	 * Returns the value of the '<em><b>Extends</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Extends</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Extends</em>' reference.
+	 * @see #setExtends(DataConcept)
+	 * @see mc2.Mc2Package#getDataConcept_Extends()
+	 * @model
+	 * @generated
+	 */
+	DataConcept getExtends();
+
+	/**
+	 * Sets the value of the '{@link mc2.DataConcept#getExtends <em>Extends</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Extends</em>' reference.
+	 * @see #getExtends()
+	 * @generated
+	 */
+	void setExtends(DataConcept value);
 
 } // DataConcept

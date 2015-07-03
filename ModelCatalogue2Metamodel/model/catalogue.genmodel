@@ -16,12 +16,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DataAnnotation/languageURI"/>
     </genClasses>
     <genClasses ecoreClass="catalogue.ecore#//DataAssociation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DataAssociation/inRoleName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DataAssociation/outRoleName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DataAssociation/direction"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataAssociation/to"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DataAssociation/multiplicity"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataAssociation/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataAssociation/opposite"/>
     </genClasses>
     <genClasses ecoreClass="catalogue.ecore#//DataModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataModel/owns"/>
@@ -29,6 +27,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="catalogue.ecore#//DataConcept">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataConcept/clones"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataConcept/extends"/>
     </genClasses>
     <genClasses ecoreClass="catalogue.ecore#//DataSection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataSection/groups"/>

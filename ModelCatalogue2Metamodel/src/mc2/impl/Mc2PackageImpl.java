@@ -269,35 +269,8 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataAssociation_InRoleName() {
-		return (EAttribute)dataAssociationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDataAssociation_OutRoleName() {
-		return (EAttribute)dataAssociationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDataAssociation_Direction() {
-		return (EAttribute)dataAssociationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getDataAssociation_To() {
-		return (EReference)dataAssociationEClass.getEStructuralFeatures().get(3);
+		return (EReference)dataAssociationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -306,7 +279,7 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 	 * @generated
 	 */
 	public EAttribute getDataAssociation_Multiplicity() {
-		return (EAttribute)dataAssociationEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)dataAssociationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -315,7 +288,7 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 	 * @generated
 	 */
 	public EReference getDataAssociation_From() {
-		return (EReference)dataAssociationEClass.getEStructuralFeatures().get(5);
+		return (EReference)dataAssociationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -361,6 +334,15 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 	 */
 	public EReference getDataConcept_Clones() {
 		return (EReference)dataConceptEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataConcept_Extends() {
+		return (EReference)dataConceptEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -572,9 +554,6 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 		createEAttribute(dataAnnotationEClass, DATA_ANNOTATION__LANGUAGE_URI);
 
 		dataAssociationEClass = createEClass(DATA_ASSOCIATION);
-		createEAttribute(dataAssociationEClass, DATA_ASSOCIATION__IN_ROLE_NAME);
-		createEAttribute(dataAssociationEClass, DATA_ASSOCIATION__OUT_ROLE_NAME);
-		createEAttribute(dataAssociationEClass, DATA_ASSOCIATION__DIRECTION);
 		createEReference(dataAssociationEClass, DATA_ASSOCIATION__TO);
 		createEAttribute(dataAssociationEClass, DATA_ASSOCIATION__MULTIPLICITY);
 		createEReference(dataAssociationEClass, DATA_ASSOCIATION__FROM);
@@ -585,6 +564,7 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 
 		dataConceptEClass = createEClass(DATA_CONCEPT);
 		createEReference(dataConceptEClass, DATA_CONCEPT__CLONES);
+		createEReference(dataConceptEClass, DATA_CONCEPT__EXTENDS);
 
 		dataSectionEClass = createEClass(DATA_SECTION);
 		createEReference(dataSectionEClass, DATA_SECTION__GROUPS);
@@ -667,9 +647,6 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 		initEAttribute(getDataAnnotation_LanguageURI(), ecorePackage.getEString(), "languageURI", null, 0, 1, DataAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataAssociationEClass, DataAssociation.class, "DataAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataAssociation_InRoleName(), ecorePackage.getEString(), "inRoleName", null, 0, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataAssociation_OutRoleName(), ecorePackage.getEString(), "outRoleName", null, 0, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataAssociation_Direction(), ecorePackage.getEInt(), "direction", null, 0, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataAssociation_To(), this.getCatalogueCore(), null, "to", null, 1, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataAssociation_Multiplicity(), ecorePackage.getEString(), "multiplicity", null, 0, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataAssociation_From(), this.getCatalogueCore(), null, "from", null, 1, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -680,6 +657,7 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 
 		initEClass(dataConceptEClass, DataConcept.class, "DataConcept", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataConcept_Clones(), this.getDataConcept(), null, "clones", null, 0, -1, DataConcept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataConcept_Extends(), this.getDataConcept(), null, "extends", null, 0, 1, DataConcept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataSectionEClass, DataSection.class, "DataSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataSection_Groups(), this.getDataClass(), null, "groups", null, 0, -1, DataSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
