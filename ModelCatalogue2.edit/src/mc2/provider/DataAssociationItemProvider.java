@@ -45,80 +45,11 @@ public class DataAssociationItemProvider extends DataConceptItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addInRoleNamePropertyDescriptor(object);
-			addOutRoleNamePropertyDescriptor(object);
-			addDirectionPropertyDescriptor(object);
 			addToPropertyDescriptor(object);
 			addMultiplicityPropertyDescriptor(object);
 			addFromPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the In Role Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInRoleNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataAssociation_inRoleName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataAssociation_inRoleName_feature", "_UI_DataAssociation_type"),
-				 Mc2Package.Literals.DATA_ASSOCIATION__IN_ROLE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Out Role Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOutRoleNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataAssociation_outRoleName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataAssociation_outRoleName_feature", "_UI_DataAssociation_type"),
-				 Mc2Package.Literals.DATA_ASSOCIATION__OUT_ROLE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Direction feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDirectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataAssociation_direction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataAssociation_direction_feature", "_UI_DataAssociation_type"),
-				 Mc2Package.Literals.DATA_ASSOCIATION__DIRECTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -225,9 +156,6 @@ public class DataAssociationItemProvider extends DataConceptItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataAssociation.class)) {
-			case Mc2Package.DATA_ASSOCIATION__IN_ROLE_NAME:
-			case Mc2Package.DATA_ASSOCIATION__OUT_ROLE_NAME:
-			case Mc2Package.DATA_ASSOCIATION__DIRECTION:
 			case Mc2Package.DATA_ASSOCIATION__MULTIPLICITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
