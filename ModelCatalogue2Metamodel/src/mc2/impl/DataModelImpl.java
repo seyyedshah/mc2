@@ -8,6 +8,7 @@ import mc2.DataConcept;
 import mc2.DataModel;
 import mc2.Mc2Package;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link mc2.impl.DataModelImpl#getOwns <em>Owns</em>}</li>
  *   <li>{@link mc2.impl.DataModelImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link mc2.impl.DataModelImpl#getURI <em>URI</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +56,26 @@ public class DataModelImpl extends CatalogueCoreImpl implements DataModel {
 	 * @ordered
 	 */
 	protected EList<DataConcept> imports;
+
+	/**
+	 * The default value of the '{@link #getURI() <em>URI</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getURI()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String URI_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getURI() <em>URI</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getURI()
+	 * @generated
+	 * @ordered
+	 */
+	protected String uri = URI_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,6 +125,27 @@ public class DataModelImpl extends CatalogueCoreImpl implements DataModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getURI() {
+		return uri;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setURI(String newURI) {
+		String oldURI = uri;
+		uri = newURI;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Mc2Package.DATA_MODEL__URI, oldURI, uri));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -123,6 +167,8 @@ public class DataModelImpl extends CatalogueCoreImpl implements DataModel {
 				return getOwns();
 			case Mc2Package.DATA_MODEL__IMPORTS:
 				return getImports();
+			case Mc2Package.DATA_MODEL__URI:
+				return getURI();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -144,6 +190,9 @@ public class DataModelImpl extends CatalogueCoreImpl implements DataModel {
 				getImports().clear();
 				getImports().addAll((Collection<? extends DataConcept>)newValue);
 				return;
+			case Mc2Package.DATA_MODEL__URI:
+				setURI((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -162,6 +211,9 @@ public class DataModelImpl extends CatalogueCoreImpl implements DataModel {
 			case Mc2Package.DATA_MODEL__IMPORTS:
 				getImports().clear();
 				return;
+			case Mc2Package.DATA_MODEL__URI:
+				setURI(URI_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -178,8 +230,26 @@ public class DataModelImpl extends CatalogueCoreImpl implements DataModel {
 				return owns != null && !owns.isEmpty();
 			case Mc2Package.DATA_MODEL__IMPORTS:
 				return imports != null && !imports.isEmpty();
+			case Mc2Package.DATA_MODEL__URI:
+				return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (URI: ");
+		result.append(uri);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DataModelImpl

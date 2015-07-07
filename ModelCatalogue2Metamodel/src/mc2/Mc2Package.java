@@ -295,13 +295,13 @@ public interface Mc2Package extends EPackage {
 	int DATA_ASSOCIATION__TO = DATA_CONCEPT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
+	 * The feature id for the '<em><b>Lower Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSOCIATION__MULTIPLICITY = DATA_CONCEPT_FEATURE_COUNT + 1;
+	int DATA_ASSOCIATION__LOWER_MULTIPLICITY = DATA_CONCEPT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -313,13 +313,31 @@ public interface Mc2Package extends EPackage {
 	int DATA_ASSOCIATION__FROM = DATA_CONCEPT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Opposite</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ASSOCIATION__OPPOSITE = DATA_CONCEPT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Upper Multiplicity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ASSOCIATION__UPPER_MULTIPLICITY = DATA_CONCEPT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Data Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSOCIATION_FEATURE_COUNT = DATA_CONCEPT_FEATURE_COUNT + 3;
+	int DATA_ASSOCIATION_FEATURE_COUNT = DATA_CONCEPT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Data Association</em>' class.
@@ -377,13 +395,22 @@ public interface Mc2Package extends EPackage {
 	int DATA_MODEL__IMPORTS = CATALOGUE_CORE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>URI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_MODEL__URI = CATALOGUE_CORE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Data Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MODEL_FEATURE_COUNT = CATALOGUE_CORE_FEATURE_COUNT + 2;
+	int DATA_MODEL_FEATURE_COUNT = CATALOGUE_CORE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Data Model</em>' class.
@@ -1122,15 +1149,15 @@ public interface Mc2Package extends EPackage {
 	EReference getDataAssociation_To();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mc2.DataAssociation#getMultiplicity <em>Multiplicity</em>}'.
+	 * Returns the meta object for the attribute '{@link mc2.DataAssociation#getLowerMultiplicity <em>Lower Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Multiplicity</em>'.
-	 * @see mc2.DataAssociation#getMultiplicity()
+	 * @return the meta object for the attribute '<em>Lower Multiplicity</em>'.
+	 * @see mc2.DataAssociation#getLowerMultiplicity()
 	 * @see #getDataAssociation()
 	 * @generated
 	 */
-	EAttribute getDataAssociation_Multiplicity();
+	EAttribute getDataAssociation_LowerMultiplicity();
 
 	/**
 	 * Returns the meta object for the reference '{@link mc2.DataAssociation#getFrom <em>From</em>}'.
@@ -1142,6 +1169,28 @@ public interface Mc2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getDataAssociation_From();
+
+	/**
+	 * Returns the meta object for the reference '{@link mc2.DataAssociation#getOpposite <em>Opposite</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Opposite</em>'.
+	 * @see mc2.DataAssociation#getOpposite()
+	 * @see #getDataAssociation()
+	 * @generated
+	 */
+	EReference getDataAssociation_Opposite();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mc2.DataAssociation#getUpperMultiplicity <em>Upper Multiplicity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Upper Multiplicity</em>'.
+	 * @see mc2.DataAssociation#getUpperMultiplicity()
+	 * @see #getDataAssociation()
+	 * @generated
+	 */
+	EAttribute getDataAssociation_UpperMultiplicity();
 
 	/**
 	 * Returns the meta object for class '{@link mc2.DataModel <em>Data Model</em>}'.
@@ -1174,6 +1223,17 @@ public interface Mc2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getDataModel_Imports();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mc2.DataModel#getURI <em>URI</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>URI</em>'.
+	 * @see mc2.DataModel#getURI()
+	 * @see #getDataModel()
+	 * @generated
+	 */
+	EAttribute getDataModel_URI();
 
 	/**
 	 * Returns the meta object for class '{@link mc2.DataConcept <em>Data Concept</em>}'.
@@ -1509,12 +1569,12 @@ public interface Mc2Package extends EPackage {
 		EReference DATA_ASSOCIATION__TO = eINSTANCE.getDataAssociation_To();
 
 		/**
-		 * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Lower Multiplicity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_ASSOCIATION__MULTIPLICITY = eINSTANCE.getDataAssociation_Multiplicity();
+		EAttribute DATA_ASSOCIATION__LOWER_MULTIPLICITY = eINSTANCE.getDataAssociation_LowerMultiplicity();
 
 		/**
 		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
@@ -1523,6 +1583,22 @@ public interface Mc2Package extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_ASSOCIATION__FROM = eINSTANCE.getDataAssociation_From();
+
+		/**
+		 * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_ASSOCIATION__OPPOSITE = eINSTANCE.getDataAssociation_Opposite();
+
+		/**
+		 * The meta object literal for the '<em><b>Upper Multiplicity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_ASSOCIATION__UPPER_MULTIPLICITY = eINSTANCE.getDataAssociation_UpperMultiplicity();
 
 		/**
 		 * The meta object literal for the '{@link mc2.impl.DataModelImpl <em>Data Model</em>}' class.
@@ -1549,6 +1625,14 @@ public interface Mc2Package extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_MODEL__IMPORTS = eINSTANCE.getDataModel_Imports();
+
+		/**
+		 * The meta object literal for the '<em><b>URI</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_MODEL__URI = eINSTANCE.getDataModel_URI();
 
 		/**
 		 * The meta object literal for the '{@link mc2.impl.DataConceptImpl <em>Data Concept</em>}' class.

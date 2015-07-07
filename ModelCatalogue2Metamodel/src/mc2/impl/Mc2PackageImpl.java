@@ -278,7 +278,7 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataAssociation_Multiplicity() {
+	public EAttribute getDataAssociation_LowerMultiplicity() {
 		return (EAttribute)dataAssociationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -289,6 +289,24 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 	 */
 	public EReference getDataAssociation_From() {
 		return (EReference)dataAssociationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataAssociation_Opposite() {
+		return (EReference)dataAssociationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataAssociation_UpperMultiplicity() {
+		return (EAttribute)dataAssociationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -316,6 +334,15 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 	 */
 	public EReference getDataModel_Imports() {
 		return (EReference)dataModelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataModel_URI() {
+		return (EAttribute)dataModelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -555,12 +582,15 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 
 		dataAssociationEClass = createEClass(DATA_ASSOCIATION);
 		createEReference(dataAssociationEClass, DATA_ASSOCIATION__TO);
-		createEAttribute(dataAssociationEClass, DATA_ASSOCIATION__MULTIPLICITY);
+		createEAttribute(dataAssociationEClass, DATA_ASSOCIATION__LOWER_MULTIPLICITY);
 		createEReference(dataAssociationEClass, DATA_ASSOCIATION__FROM);
+		createEReference(dataAssociationEClass, DATA_ASSOCIATION__OPPOSITE);
+		createEAttribute(dataAssociationEClass, DATA_ASSOCIATION__UPPER_MULTIPLICITY);
 
 		dataModelEClass = createEClass(DATA_MODEL);
 		createEReference(dataModelEClass, DATA_MODEL__OWNS);
 		createEReference(dataModelEClass, DATA_MODEL__IMPORTS);
+		createEAttribute(dataModelEClass, DATA_MODEL__URI);
 
 		dataConceptEClass = createEClass(DATA_CONCEPT);
 		createEReference(dataConceptEClass, DATA_CONCEPT__CLONES);
@@ -648,12 +678,15 @@ public class Mc2PackageImpl extends EPackageImpl implements Mc2Package {
 
 		initEClass(dataAssociationEClass, DataAssociation.class, "DataAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataAssociation_To(), this.getCatalogueCore(), null, "to", null, 1, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataAssociation_Multiplicity(), ecorePackage.getEString(), "multiplicity", null, 0, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataAssociation_LowerMultiplicity(), ecorePackage.getEInt(), "lowerMultiplicity", null, 0, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataAssociation_From(), this.getCatalogueCore(), null, "from", null, 1, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataAssociation_Opposite(), this.getDataAssociation(), null, "opposite", null, 0, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataAssociation_UpperMultiplicity(), ecorePackage.getEInt(), "upperMultiplicity", null, 0, 1, DataAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataModelEClass, DataModel.class, "DataModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataModel_Owns(), this.getDataConcept(), null, "owns", null, 1, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataModel_Imports(), this.getDataConcept(), null, "imports", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataModel_URI(), ecorePackage.getEString(), "URI", null, 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataConceptEClass, DataConcept.class, "DataConcept", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataConcept_Clones(), this.getDataConcept(), null, "clones", null, 0, -1, DataConcept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

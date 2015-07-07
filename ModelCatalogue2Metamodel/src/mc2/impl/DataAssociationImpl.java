@@ -18,8 +18,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link mc2.impl.DataAssociationImpl#getTo <em>To</em>}</li>
- *   <li>{@link mc2.impl.DataAssociationImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link mc2.impl.DataAssociationImpl#getLowerMultiplicity <em>Lower Multiplicity</em>}</li>
  *   <li>{@link mc2.impl.DataAssociationImpl#getFrom <em>From</em>}</li>
+ *   <li>{@link mc2.impl.DataAssociationImpl#getOpposite <em>Opposite</em>}</li>
+ *   <li>{@link mc2.impl.DataAssociationImpl#getUpperMultiplicity <em>Upper Multiplicity</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,24 +39,24 @@ public class DataAssociationImpl extends DataConceptImpl implements DataAssociat
 	protected CatalogueCore to;
 
 	/**
-	 * The default value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
+	 * The default value of the '{@link #getLowerMultiplicity() <em>Lower Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMultiplicity()
+	 * @see #getLowerMultiplicity()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MULTIPLICITY_EDEFAULT = null;
+	protected static final int LOWER_MULTIPLICITY_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
+	 * The cached value of the '{@link #getLowerMultiplicity() <em>Lower Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMultiplicity()
+	 * @see #getLowerMultiplicity()
 	 * @generated
 	 * @ordered
 	 */
-	protected String multiplicity = MULTIPLICITY_EDEFAULT;
+	protected int lowerMultiplicity = LOWER_MULTIPLICITY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
@@ -65,6 +67,36 @@ public class DataAssociationImpl extends DataConceptImpl implements DataAssociat
 	 * @ordered
 	 */
 	protected CatalogueCore from;
+
+	/**
+	 * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOpposite()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataAssociation opposite;
+
+	/**
+	 * The default value of the '{@link #getUpperMultiplicity() <em>Upper Multiplicity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperMultiplicity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int UPPER_MULTIPLICITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getUpperMultiplicity() <em>Upper Multiplicity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperMultiplicity()
+	 * @generated
+	 * @ordered
+	 */
+	protected int upperMultiplicity = UPPER_MULTIPLICITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,8 +160,8 @@ public class DataAssociationImpl extends DataConceptImpl implements DataAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMultiplicity() {
-		return multiplicity;
+	public int getLowerMultiplicity() {
+		return lowerMultiplicity;
 	}
 
 	/**
@@ -137,11 +169,11 @@ public class DataAssociationImpl extends DataConceptImpl implements DataAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMultiplicity(String newMultiplicity) {
-		String oldMultiplicity = multiplicity;
-		multiplicity = newMultiplicity;
+	public void setLowerMultiplicity(int newLowerMultiplicity) {
+		int oldLowerMultiplicity = lowerMultiplicity;
+		lowerMultiplicity = newLowerMultiplicity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mc2Package.DATA_ASSOCIATION__MULTIPLICITY, oldMultiplicity, multiplicity));
+			eNotify(new ENotificationImpl(this, Notification.SET, Mc2Package.DATA_ASSOCIATION__LOWER_MULTIPLICITY, oldLowerMultiplicity, lowerMultiplicity));
 	}
 
 	/**
@@ -187,17 +219,81 @@ public class DataAssociationImpl extends DataConceptImpl implements DataAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DataAssociation getOpposite() {
+		if (opposite != null && opposite.eIsProxy()) {
+			InternalEObject oldOpposite = (InternalEObject)opposite;
+			opposite = (DataAssociation)eResolveProxy(oldOpposite);
+			if (opposite != oldOpposite) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Mc2Package.DATA_ASSOCIATION__OPPOSITE, oldOpposite, opposite));
+			}
+		}
+		return opposite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataAssociation basicGetOpposite() {
+		return opposite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOpposite(DataAssociation newOpposite) {
+		DataAssociation oldOpposite = opposite;
+		opposite = newOpposite;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Mc2Package.DATA_ASSOCIATION__OPPOSITE, oldOpposite, opposite));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getUpperMultiplicity() {
+		return upperMultiplicity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUpperMultiplicity(int newUpperMultiplicity) {
+		int oldUpperMultiplicity = upperMultiplicity;
+		upperMultiplicity = newUpperMultiplicity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Mc2Package.DATA_ASSOCIATION__UPPER_MULTIPLICITY, oldUpperMultiplicity, upperMultiplicity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mc2Package.DATA_ASSOCIATION__TO:
 				if (resolve) return getTo();
 				return basicGetTo();
-			case Mc2Package.DATA_ASSOCIATION__MULTIPLICITY:
-				return getMultiplicity();
+			case Mc2Package.DATA_ASSOCIATION__LOWER_MULTIPLICITY:
+				return getLowerMultiplicity();
 			case Mc2Package.DATA_ASSOCIATION__FROM:
 				if (resolve) return getFrom();
 				return basicGetFrom();
+			case Mc2Package.DATA_ASSOCIATION__OPPOSITE:
+				if (resolve) return getOpposite();
+				return basicGetOpposite();
+			case Mc2Package.DATA_ASSOCIATION__UPPER_MULTIPLICITY:
+				return getUpperMultiplicity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,11 +310,17 @@ public class DataAssociationImpl extends DataConceptImpl implements DataAssociat
 			case Mc2Package.DATA_ASSOCIATION__TO:
 				setTo((CatalogueCore)newValue);
 				return;
-			case Mc2Package.DATA_ASSOCIATION__MULTIPLICITY:
-				setMultiplicity((String)newValue);
+			case Mc2Package.DATA_ASSOCIATION__LOWER_MULTIPLICITY:
+				setLowerMultiplicity((Integer)newValue);
 				return;
 			case Mc2Package.DATA_ASSOCIATION__FROM:
 				setFrom((CatalogueCore)newValue);
+				return;
+			case Mc2Package.DATA_ASSOCIATION__OPPOSITE:
+				setOpposite((DataAssociation)newValue);
+				return;
+			case Mc2Package.DATA_ASSOCIATION__UPPER_MULTIPLICITY:
+				setUpperMultiplicity((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,11 +337,17 @@ public class DataAssociationImpl extends DataConceptImpl implements DataAssociat
 			case Mc2Package.DATA_ASSOCIATION__TO:
 				setTo((CatalogueCore)null);
 				return;
-			case Mc2Package.DATA_ASSOCIATION__MULTIPLICITY:
-				setMultiplicity(MULTIPLICITY_EDEFAULT);
+			case Mc2Package.DATA_ASSOCIATION__LOWER_MULTIPLICITY:
+				setLowerMultiplicity(LOWER_MULTIPLICITY_EDEFAULT);
 				return;
 			case Mc2Package.DATA_ASSOCIATION__FROM:
 				setFrom((CatalogueCore)null);
+				return;
+			case Mc2Package.DATA_ASSOCIATION__OPPOSITE:
+				setOpposite((DataAssociation)null);
+				return;
+			case Mc2Package.DATA_ASSOCIATION__UPPER_MULTIPLICITY:
+				setUpperMultiplicity(UPPER_MULTIPLICITY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -255,10 +363,14 @@ public class DataAssociationImpl extends DataConceptImpl implements DataAssociat
 		switch (featureID) {
 			case Mc2Package.DATA_ASSOCIATION__TO:
 				return to != null;
-			case Mc2Package.DATA_ASSOCIATION__MULTIPLICITY:
-				return MULTIPLICITY_EDEFAULT == null ? multiplicity != null : !MULTIPLICITY_EDEFAULT.equals(multiplicity);
+			case Mc2Package.DATA_ASSOCIATION__LOWER_MULTIPLICITY:
+				return lowerMultiplicity != LOWER_MULTIPLICITY_EDEFAULT;
 			case Mc2Package.DATA_ASSOCIATION__FROM:
 				return from != null;
+			case Mc2Package.DATA_ASSOCIATION__OPPOSITE:
+				return opposite != null;
+			case Mc2Package.DATA_ASSOCIATION__UPPER_MULTIPLICITY:
+				return upperMultiplicity != UPPER_MULTIPLICITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,8 +385,10 @@ public class DataAssociationImpl extends DataConceptImpl implements DataAssociat
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (multiplicity: ");
-		result.append(multiplicity);
+		result.append(" (lowerMultiplicity: ");
+		result.append(lowerMultiplicity);
+		result.append(", upperMultiplicity: ");
+		result.append(upperMultiplicity);
 		result.append(')');
 		return result.toString();
 	}

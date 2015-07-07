@@ -13,8 +13,10 @@ package mc2;
  * The following features are supported:
  * <ul>
  *   <li>{@link mc2.DataAssociation#getTo <em>To</em>}</li>
- *   <li>{@link mc2.DataAssociation#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link mc2.DataAssociation#getLowerMultiplicity <em>Lower Multiplicity</em>}</li>
  *   <li>{@link mc2.DataAssociation#getFrom <em>From</em>}</li>
+ *   <li>{@link mc2.DataAssociation#getOpposite <em>Opposite</em>}</li>
+ *   <li>{@link mc2.DataAssociation#getUpperMultiplicity <em>Upper Multiplicity</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,30 +52,30 @@ public interface DataAssociation extends DataConcept {
 	void setTo(CatalogueCore value);
 
 	/**
-	 * Returns the value of the '<em><b>Multiplicity</b></em>' attribute.
+	 * Returns the value of the '<em><b>Lower Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Multiplicity</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Lower Multiplicity</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Multiplicity</em>' attribute.
-	 * @see #setMultiplicity(String)
-	 * @see mc2.Mc2Package#getDataAssociation_Multiplicity()
+	 * @return the value of the '<em>Lower Multiplicity</em>' attribute.
+	 * @see #setLowerMultiplicity(int)
+	 * @see mc2.Mc2Package#getDataAssociation_LowerMultiplicity()
 	 * @model
 	 * @generated
 	 */
-	String getMultiplicity();
+	int getLowerMultiplicity();
 
 	/**
-	 * Sets the value of the '{@link mc2.DataAssociation#getMultiplicity <em>Multiplicity</em>}' attribute.
+	 * Sets the value of the '{@link mc2.DataAssociation#getLowerMultiplicity <em>Lower Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Multiplicity</em>' attribute.
-	 * @see #getMultiplicity()
+	 * @param value the new value of the '<em>Lower Multiplicity</em>' attribute.
+	 * @see #getLowerMultiplicity()
 	 * @generated
 	 */
-	void setMultiplicity(String value);
+	void setLowerMultiplicity(int value);
 
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
@@ -100,5 +102,57 @@ public interface DataAssociation extends DataConcept {
 	 * @generated
 	 */
 	void setFrom(CatalogueCore value);
+
+	/**
+	 * Returns the value of the '<em><b>Opposite</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Opposite</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Opposite</em>' reference.
+	 * @see #setOpposite(DataAssociation)
+	 * @see mc2.Mc2Package#getDataAssociation_Opposite()
+	 * @model
+	 * @generated
+	 */
+	DataAssociation getOpposite();
+
+	/**
+	 * Sets the value of the '{@link mc2.DataAssociation#getOpposite <em>Opposite</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Opposite</em>' reference.
+	 * @see #getOpposite()
+	 * @generated
+	 */
+	void setOpposite(DataAssociation value);
+
+	/**
+	 * Returns the value of the '<em><b>Upper Multiplicity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Upper Multiplicity</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Upper Multiplicity</em>' attribute.
+	 * @see #setUpperMultiplicity(int)
+	 * @see mc2.Mc2Package#getDataAssociation_UpperMultiplicity()
+	 * @model
+	 * @generated
+	 */
+	int getUpperMultiplicity();
+
+	/**
+	 * Sets the value of the '{@link mc2.DataAssociation#getUpperMultiplicity <em>Upper Multiplicity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Upper Multiplicity</em>' attribute.
+	 * @see #getUpperMultiplicity()
+	 * @generated
+	 */
+	void setUpperMultiplicity(int value);
 
 } // DataAssociation

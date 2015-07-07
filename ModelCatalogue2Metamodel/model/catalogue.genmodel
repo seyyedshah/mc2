@@ -17,13 +17,15 @@
     </genClasses>
     <genClasses ecoreClass="catalogue.ecore#//DataAssociation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataAssociation/to"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DataAssociation/multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DataAssociation/lowerMultiplicity"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataAssociation/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataAssociation/opposite"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DataAssociation/upperMultiplicity"/>
     </genClasses>
     <genClasses ecoreClass="catalogue.ecore#//DataModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataModel/owns"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataModel/imports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DataModel/URI"/>
     </genClasses>
     <genClasses image="false" ecoreClass="catalogue.ecore#//DataConcept">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference catalogue.ecore#//DataConcept/clones"/>

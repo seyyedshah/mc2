@@ -46,8 +46,10 @@ public class DataAssociationItemProvider extends DataConceptItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addToPropertyDescriptor(object);
-			addMultiplicityPropertyDescriptor(object);
+			addLowerMultiplicityPropertyDescriptor(object);
 			addFromPropertyDescriptor(object);
+			addOppositePropertyDescriptor(object);
+			addUpperMultiplicityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,23 +77,23 @@ public class DataAssociationItemProvider extends DataConceptItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Multiplicity feature.
+	 * This adds a property descriptor for the Lower Multiplicity feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMultiplicityPropertyDescriptor(Object object) {
+	protected void addLowerMultiplicityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataAssociation_multiplicity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataAssociation_multiplicity_feature", "_UI_DataAssociation_type"),
-				 Mc2Package.Literals.DATA_ASSOCIATION__MULTIPLICITY,
+				 getString("_UI_DataAssociation_lowerMultiplicity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataAssociation_lowerMultiplicity_feature", "_UI_DataAssociation_type"),
+				 Mc2Package.Literals.DATA_ASSOCIATION__LOWER_MULTIPLICITY,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -114,6 +116,50 @@ public class DataAssociationItemProvider extends DataConceptItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Opposite feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOppositePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataAssociation_opposite_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataAssociation_opposite_feature", "_UI_DataAssociation_type"),
+				 Mc2Package.Literals.DATA_ASSOCIATION__OPPOSITE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Upper Multiplicity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUpperMultiplicityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataAssociation_upperMultiplicity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataAssociation_upperMultiplicity_feature", "_UI_DataAssociation_type"),
+				 Mc2Package.Literals.DATA_ASSOCIATION__UPPER_MULTIPLICITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -156,7 +202,8 @@ public class DataAssociationItemProvider extends DataConceptItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataAssociation.class)) {
-			case Mc2Package.DATA_ASSOCIATION__MULTIPLICITY:
+			case Mc2Package.DATA_ASSOCIATION__LOWER_MULTIPLICITY:
+			case Mc2Package.DATA_ASSOCIATION__UPPER_MULTIPLICITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

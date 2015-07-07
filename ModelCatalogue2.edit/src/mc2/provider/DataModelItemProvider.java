@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -48,6 +49,7 @@ public class DataModelItemProvider extends CatalogueCoreItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addImportsPropertyDescriptor(object);
+			addURIPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -70,6 +72,28 @@ public class DataModelItemProvider extends CatalogueCoreItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the URI feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addURIPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataModel_URI_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataModel_URI_feature", "_UI_DataModel_type"),
+				 Mc2Package.Literals.DATA_MODEL__URI,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -142,6 +166,9 @@ public class DataModelItemProvider extends CatalogueCoreItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataModel.class)) {
+			case Mc2Package.DATA_MODEL__URI:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case Mc2Package.DATA_MODEL__OWNS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
